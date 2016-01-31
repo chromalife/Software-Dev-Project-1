@@ -1,0 +1,17 @@
+GET /~wmcdorma/ HTTP/1.0net Client
+HTTP/1.1 200 OK
+Date: Thu, 28 Jan 2016 22:33:36 GMT
+Server: Apache/2.4.7 (Ubuntu)
+Last-Modified: Thu, 28 Jan 2016 04:56:10 GMT
+ETag: "81-52a5dbcb72e80"
+Accept-Ranges: bytes
+Content-Length: 129
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Welcome! please stay a while</h1>
+<p>Ok, that's long enough....</p>
+</body>
