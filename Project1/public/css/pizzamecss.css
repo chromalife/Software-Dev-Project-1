@@ -2,7 +2,7 @@
 body {
 	font: 100%/1.4 Colonia
 	"Colonna MT", Arial, Helvetica, sans-serif;
-	background-image: url(images/foodblogbackround.jpg);
+	background-image:url(../foodblogbackround.jpg);
 	margin: 0;
 	padding: 0;
 	color: #000;
