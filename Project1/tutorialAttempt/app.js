@@ -1,3 +1,4 @@
+var angular = require('angular.min.js');
 var app = angular.module('flapperNews', []);
 
 app.controller('MainCtrl', [
@@ -19,3 +20,5 @@ function($scope){
 	  $scope.title = '';
   };
 }]);
+
+app.listen(3000);
