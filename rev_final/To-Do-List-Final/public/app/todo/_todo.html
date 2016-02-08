@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-2">
+        <h3>List</h3>
+        <button class="btn btn-xs btn-primary" ng-click="addTodo()">Add To-Do</button>
+        <ul class="todo-list-ul">
+            <li ng-repeat="item in Todolist"><a ng-click="changeView( item._id )">{{ item.name }}</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-10" ng-if="activeItem == null && activeState != 'new' && activeState != 'edit'">
+        <div class="row">
+            <div class="well well-lg">
+                <h1>Please Select an Item</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-10" ng-if="activeItem != null && activeState != 'new' && activeState != 'edit'">
+        <div class="row">
+            <div class="well well-lg">
+                <h1> {{ activeItem.name }}</h1>
+                <p> {{ activeItem.description }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-primary" ng-click="editItem(activeItem)">Edit</button>
+            <button class="btn btn-danger" ng-click="deleteItem(activeItem)">Delete</button>
+        </div>
+    </div>
+
+    <div class="col-md-10" ng-if="activeState == 'new'">
+        <h1>New To-Do List Item</h1>
+            <form>
+                <div class="form-group row">
+                    <label for="todo-item-name" class="col-sm-1">Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="todo-item-name" placeholder="Name..." ng-model="newItem.name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="todo-item-description" class="col-sm-1">Description</label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" id="todo-item-description" rows="7" ng-model="newItem.description"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button class="btn btn-success" ng-click="saveNewItem(newItem)">Save</button>
+                    <button class="btn btn-default" ng-click="cancelNewItem()">Cancel</button>
+                </div>
+
+            </form>
+    </div>
+
+    <div class="col-md-10" ng-if="activeState == 'edit'">
+        <h1>Edit To-Do List Item</h1>
+        <form>
+            <div class="form-group row">
+                <label for="todo-item-edit-name" class="col-sm-1">Name</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="todo-item-edit-name" ng-model="tempItem.name" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="todo-item-edit-description" class="col-sm-1">Description</label>
+                <div class="col-sm-5">
+                    <textarea class="form-control" id="todo-item-edit-description" rows="7" ng-model="tempItem.description"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-success" ng-click="updateItem(tempItem)">Update</button>
+                <button class="btn btn-default" ng-click="cancelUpdateItem()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
