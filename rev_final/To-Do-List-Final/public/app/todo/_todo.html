@@ -26,6 +26,9 @@
         <div class="row">
             <button class="btn btn-primary" ng-click="editItem(activeItem)">Edit</button>
             <button class="btn btn-danger" ng-click="deleteItem(activeItem)">Delete</button>
+			<button>
+				Upload Image<input type="file" ng-file-select="onFileSelect($files)">
+			</button>
         </div>
     </div>
 
